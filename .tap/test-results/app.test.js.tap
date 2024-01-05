@@ -1,0 +1,8 @@
+# "GET `/` route" has `only` set but all tests run
+TAP version 14
+# Subtest: GET `/` route
+    ok 1 - should be equivalent
+    1..1
+ok 1 - GET `/` route # time=17.773ms
+
+1..1

@@ -1,0 +1,29 @@
+{
+  "date": "2024-01-04T18:35:19.804Z",
+  "argv": [
+    "/Users/federicohernandezvelasquez/.nvm/versions/node/v18.15.0/bin/node",
+    "/opt/PROJECTS/commerce7/app.test.ts"
+  ],
+  "execArgv": [
+    "--loader=file:///opt/PROJECTS/commerce7/node_modules/@tapjs/test/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/esm.mjs",
+    "--loader=file:///opt/PROJECTS/commerce7/node_modules/@tapjs/mock/dist/esm/legacy-loader.mjs",
+    "--no-warnings",
+    "--enable-source-maps",
+    "--loader=file:///opt/PROJECTS/commerce7/node_modules/@tapjs/processinfo/dist/esm/loader-legacy.mjs"
+  ],
+  "NODE_OPTIONS": "\"--loader=file:///opt/PROJECTS/commerce7/node_modules/@tapjs/processinfo/dist/esm/loader-legacy.mjs\" \"--no-warnings\"",
+  "cwd": "/opt/PROJECTS/commerce7",
+  "pid": 73280,
+  "ppid": 73279,
+  "parent": null,
+  "uuid": "5f6d2f02-0eb6-40ef-b2b7-0291160a1a57",
+  "files": [
+    "/opt/PROJECTS/commerce7/app.test.ts"
+  ],
+  "sources": {},
+  "root": "5f6d2f02-0eb6-40ef-b2b7-0291160a1a57",
+  "externalID": "app.test.ts",
+  "code": 1,
+  "signal": null,
+  "runtime": 805.345166
+}

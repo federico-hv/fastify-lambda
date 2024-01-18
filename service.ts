@@ -80,8 +80,7 @@ const resolvers = {
     createUser: async (
       root: any,
       { input }: { input: UserType }
-    ): // { pubsub }: PubSubObject
-    Promise<UserType | null> => {
+    ): Promise<UserType | null> => {
       // Validation is already performed by Fastify using UserType
       const newUser: UserType = {
         id: String(users.length + 1),
@@ -97,20 +96,13 @@ const resolvers = {
       pubsub.publish("users", {
         users,
       });
-      // pubsub.publish({
-      //   topic: "users",
-      //   payload: {
-      //     users: users,
-      //   },
-      // });
 
       return newUser;
     },
     updateUser: async (
       root: any,
       { id, input }: { id: string; input: UserType }
-    ): // { pubsub }: PubSubObject
-    Promise<UserType | null> => {
+    ): Promise<UserType | null> => {
       const userIndex = users.findIndex((u) => u.id === id);
       if (userIndex !== -1) {
         const updatedUser: UserType = { ...users[userIndex], ...input };
@@ -119,12 +111,6 @@ const resolvers = {
         pubsub.publish("users", {
           users,
         });
-        // pubsub.publish({
-        //   topic: "users",
-        //   payload: {
-        //     users: users,
-        //   },
-        // });
 
         return updatedUser;
       }
@@ -133,19 +119,10 @@ const resolvers = {
     deleteUser: async (
       root: any,
       { id }: { id: string }
-    ): // { pubsub }: PubSubObject
-    Promise<UserType | null> => {
+    ): Promise<UserType | null> => {
       const userIndex = users.findIndex((u) => u.id === id);
       if (userIndex !== -1) {
         const deletedUser = users.splice(userIndex, 1)[0];
-
-        // Publish the userAdded event for subscriptions
-        // pubsub.publish({
-        //   topic: "users",
-        //   payload: {
-        //     users: users,
-        //   },
-        // });
         pubsub.publish("users", {
           users,
         });
@@ -157,9 +134,6 @@ const resolvers = {
   },
   Subscription: {
     users: {
-      // subscribe: (root: any, args: any, { pubsub }: any) => {
-      //   return pubsub.subscribe("users");
-      // },
       subscribe: async () => await pubsub.asyncIterator("users"),
     },
   },
@@ -186,7 +160,7 @@ app.route({
   method: "GET",
   url: "/.netlify/functions/service/ping",
   handler: async function (request, reply) {
-    return { message: "pong!" };
+    return { message: "hello!" };
   },
 });
 

@@ -5,10 +5,10 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch index.ts",
+    "dev": "tsx watch service.ts",
+    "netlify-dev": "netlify dev",
     "build": "yarn install && tsc -p tsconfig.json",
-    "start": "node index.js",
-    "compile-schemas": "json2ts -i schemas -o types",
+    "start": "node lambda/service.js",
     "test": "tap repl help"
   },
   "author": "",
